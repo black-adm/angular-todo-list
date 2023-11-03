@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Task } from 'src/models/task.model';
 
 @Component({
@@ -6,6 +7,7 @@ import { Task } from 'src/models/task.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   public tasks: Task[] = [];
   public titleIndex: number = 0;
@@ -16,11 +18,21 @@ export class AppComponent {
     'Metas para finalizar'
   ];
   public title: String[] = [this.titlesList[0]];
+  public form: FormGroup;
 
-  constructor() {
+  constructor(private builder: FormBuilder) {
+    this.form = this.builder.group({
+      title: ['', Validators.compose([
+        Validators.minLength(5),
+        Validators.maxLength(60),
+        Validators.required
+      ])]
+    });
+
     this.tasks.push(new Task(1, 'Ir para a academia', false));
     this.tasks.push(new Task(2, 'Estudar o Angular.', false));
     this.tasks.push(new Task(3, 'Cortar o cabelo.', true));
+    this.tasks.push(new Task(3, 'Terminar a tarefa de buscar dados da Api de Petshop.', false));
   }
 
   changeTitle() {
@@ -35,6 +47,6 @@ export class AppComponent {
   }
 
   markDone(task: Task) {
-      task.done = true;
+    task.done = true;
   }
 }
