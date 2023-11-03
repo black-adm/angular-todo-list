@@ -5,6 +5,6 @@
 }
 
 body {
-    background: #FFF;
+    background: linear-gradient(45deg, #000, #0F0F0F);
     font-family: 'Montserrat', sans-serif;
 }

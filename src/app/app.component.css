@@ -29,9 +29,13 @@
     font-size: 2.5em;
     line-height: 6rem;
     font-weight: 800;
-    background: -webkit-linear-gradient(45deg, #f77f00, #f8961e, #ffba08);
+    background-image: linear-gradient(45deg, #f77f00, #f8961e, #ffba08);
+    background-size: 100%;
+    background-repeat: repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 }
 
 .title-box {
@@ -48,6 +52,9 @@
 }
 
 .change-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 1.5rem;
@@ -86,6 +93,8 @@
 }
 
 .list-section {
+    background-color: #F9FAFB;
+    list-style-type: none;
     padding: 1rem;
     border-bottom-width: 1px;
 
@@ -94,12 +103,34 @@
         margin-top: 0;
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    :hover {
-        background-color: #F9FAFB;
-    }
 }
 
 .list-task {
+    display: flex;
+    align-items: center;
     color: #000;
+    width: 100%;
+}
+
+.list-buttons {
+    display: flex;
+    justify-content: end;
+    margin-left: 1rem; 
+    column-gap: 0.5rem; 
+}
+
+button {
+    cursor: pointer;
+}
+
+.check-btn {
+    background: transparent;
+    border: none;
+    color: chartreuse;
+}
+
+.trash-btn {
+    background: transparent;
+    border: none;
+    color: #c00;
 }
