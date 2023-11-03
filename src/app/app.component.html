@@ -1,16 +1,22 @@
 <div class="app">
   <div class="app-container">
+
     <div class="title-container">
       <h1 class="title">{{ title }} </h1>
-      <button (click)="changeTitle()">Alterar Titúlo</button>
-      <p class="title-description">
-        🎯 Objetivos pessoais e profissionais.
-      </p>
+      <div class="title-box">
+        <p class="title-description">
+          🎯 Objetivos pessoais e metas profissionais.
+        </p>
+        <button type="button" class="change-btn" (click)="changeTitle()">
+          Alterar Titúlo
+        </button>
+      </div>
     </div>
+    <hr class="line">
 
-    <div>
-      <section class="list-container">
-        <p class="list-task" *ngFor="let todo of todos">{{ todo }}</p>
+    <div class="list-container">
+      <section class="list-section">
+        <p class="list-task" *ngFor="let task of tasks">{{ task }}</p>
       </section>
     </div>
 

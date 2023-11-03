@@ -8,6 +8,10 @@
 }
 
 .app-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     max-width: 56rem;
     width: 100%;
     background: #FFF;
@@ -18,15 +22,22 @@
 .title-container {
     padding: 1rem;
     border-bottom-width: 1px;
+    margin-bottom: 2em;
 }
 
 .title {
     font-size: 2.5em;
     line-height: 6rem;
     font-weight: 800;
-    background: -webkit-linear-gradient(45deg, #000, #1D1D1D, #0F0F0F);
+    background: -webkit-linear-gradient(45deg, #f77f00, #f8961e, #ffba08);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .title-description {
@@ -36,9 +47,46 @@
     color: #0F0F0F;
 }
 
+.change-btn {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-right: 0.75rem;
+    border-radius: 0.4rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f77f00;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    background: transparent;
+    color: #f77f00;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+.change-btn:hover {
+    background: #0F0F0F;
+    color: #FFF;
+    border: none;
+}
+
+.line {
+    background-color: transparent;
+    border: 0px;
+    border-top: 1px solid #e7ecef;
+}
+
 .list-container {
+    margin-top: 2rem;
+}
+
+.list-section {
     padding: 1rem;
-    margin-top: 0.25rem;
     border-bottom-width: 1px;
 
     @media (min-width: 768px) {
