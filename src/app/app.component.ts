@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fundamentos-angular';
+  public todos: any[] = [];
+
+  constructor() {
+    this.todos.push('Estudar angular');
+    this.todos.push('Ir para academia');
+    this.todos.push('Fazer a Alice dormir');
+  }
 }
