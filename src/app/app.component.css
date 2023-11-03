@@ -1,0 +1,16 @@
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-top: 60px;
+    font-size: 3.5em;
+    line-height: 6rem;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #AEDEFC, #5CD2E6, #A6F6FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
