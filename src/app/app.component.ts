@@ -34,11 +34,7 @@ export class AppComponent {
     return remove;
   }
 
-  markAsDone() {
-
-  }
-
-  markUndone() {
-
+  markDone(task: Task) {
+      task.done = true;
   }
 }

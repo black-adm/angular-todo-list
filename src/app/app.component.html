@@ -39,7 +39,7 @@
           {{ task.id }}
           {{ task.task }}
           <div class="list-buttons">
-            <button class="check-btn" *ngIf="!task.done">
+            <button type="button" class="check-btn" *ngIf="!task.done" (click)="markDone(task)">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-check-circle">
@@ -47,7 +47,7 @@
                 <path d="m9 11 3 3L22 4" />
               </svg>
             </button>
-
+            <div class="divisor"></div>
             <button type="button" class="trash-btn" (click)="remove(task)">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

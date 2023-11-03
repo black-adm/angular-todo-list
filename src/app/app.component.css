@@ -85,7 +85,7 @@
 .line {
     background-color: transparent;
     border: 0px;
-    border-top: 1px solid #e7ecef;
+    border-top: 1px solid #e8eddf;
 }
 
 .list-container {
@@ -115,8 +115,8 @@
 .list-buttons {
     display: flex;
     justify-content: end;
-    margin-left: 1rem; 
-    column-gap: 0.5rem; 
+    margin-left: 2rem; 
+    column-gap: 1rem; 
 }
 
 button {
@@ -126,7 +126,13 @@ button {
 .check-btn {
     background: transparent;
     border: none;
-    color: chartreuse;
+    color: #52c292;
+}
+
+.divisor {
+    width: 1px; 
+    height: 1rem; 
+    background: #bfc0c0;
 }
 
 .trash-btn {
