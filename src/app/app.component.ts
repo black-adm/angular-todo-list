@@ -28,6 +28,7 @@ export class AppComponent {
         Validators.required
       ])]
     });
+    this.load();
   }
 
   changeTitle() {
@@ -51,15 +52,24 @@ export class AppComponent {
   remove(task: Task) {
     const index = this.tasks.indexOf(task);
     const remove = index ? index !== -1 : this.tasks.splice(index, 1);
+    this.save();
     return remove;
   }
 
   markDone(task: Task) {
     task.done = true;
+    this.save();
   }
 
   save() {
     const data = JSON.stringify(this.tasks);
-    localStorage.setItem('tasks', data);    
+    localStorage.setItem('tasks', data);
+  }
+
+  load() {
+    const items = localStorage.getItem('tasks');
+
+    if (items) return this.tasks = JSON.parse(items);
+    return this.tasks = [];
   }
 }
