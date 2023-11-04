@@ -17,9 +17,9 @@
         </span>
       </h1>
       <div class="title-box">
-        <p class="title-description">
-          🎯 Cadastre objetivos pessoais e metas profissionais.
-        </p>
+        <h3 class="title-description">
+          🎯 Cadastre seus objetivos pessoais e metas profissionais.
+        </h3>
         <button type="button" class="change-btn" (click)="changeTitle()">
           Alterar Titúlo
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -53,7 +53,6 @@
               <input class="input-task" type="text" placeholder="Insira o titúlo da tarefa" maxlength="60"
                 formControlName="title" />
             </div>
-
             <div class="form-btn">
               <button type="button" class="btn-save" (click)="add()" [disabled]="form.invalid">
                 Salvar
@@ -65,16 +64,29 @@
                 </svg>
               </button>
             </div>
-            <span class="invalid">
-              <small *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">
-                Este campo deve conter entre 5 e 60 caracteres
-              </small>
-            </span>
           </div>
+          <span class="invalid">
+            <small *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-info">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+              </svg>
+              Este campo deve conter entre 5 e 60 caracteres
+            </small>
+          </span>
         </div>
       </form>
     </div>
-    <hr class="line">
+
+    <div class="bat-img" *ngIf="tasks.length == 0">
+      <h4>
+        Shhhh ... parece que você não possui nenhuma tarefa.
+      </h4>
+      <img src="../assets/sleeping.svg" alt="Sleeping bat">
+    </div>
 
     <div class="list-container">
       <div class="list-section">

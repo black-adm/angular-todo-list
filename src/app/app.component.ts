@@ -40,6 +40,7 @@ export class AppComponent {
     const id = this.tasks.length + 1;
 
     this.tasks.push(new Task(id, title, false))
+    this.save();
     this.clear();
   }
 
@@ -55,5 +56,10 @@ export class AppComponent {
 
   markDone(task: Task) {
     task.done = true;
+  }
+
+  save() {
+    const data = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', data);    
   }
 }
