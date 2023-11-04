@@ -267,3 +267,11 @@ button {
 .btn-save:hover {
     background: #0F0F0F;
 }
+
+.invalid {
+    width: 100%;
+}
+
+small {
+    color: #c00;
+}
