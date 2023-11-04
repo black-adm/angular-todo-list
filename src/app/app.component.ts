@@ -28,16 +28,23 @@ export class AppComponent {
         Validators.required
       ])]
     });
-
-    this.tasks.push(new Task(1, 'Ir para a academia', false));
-    this.tasks.push(new Task(2, 'Estudar o Angular.', false));
-    this.tasks.push(new Task(3, 'Cortar o cabelo.', true));
-    this.tasks.push(new Task(4, 'Terminar a tarefa de buscar dados da Api de Petshop.', false));
   }
 
   changeTitle() {
     this.titleIndex = (this.titleIndex + 1) % this.titlesList.length;
     this.title = [this.titlesList[this.titleIndex]];
+  }
+
+  add() {
+    const title = this.form.controls['title'].value;
+    const id = this.tasks.length + 1;
+
+    this.tasks.push(new Task(id, title, false))
+    this.clear();
+  }
+
+  clear() {
+    this.form.reset();
   }
 
   remove(task: Task) {
