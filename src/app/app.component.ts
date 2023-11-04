@@ -32,7 +32,7 @@ export class AppComponent {
     this.tasks.push(new Task(1, 'Ir para a academia', false));
     this.tasks.push(new Task(2, 'Estudar o Angular.', false));
     this.tasks.push(new Task(3, 'Cortar o cabelo.', true));
-    this.tasks.push(new Task(3, 'Terminar a tarefa de buscar dados da Api de Petshop.', false));
+    this.tasks.push(new Task(4, 'Terminar a tarefa de buscar dados da Api de Petshop.', false));
   }
 
   changeTitle() {
