@@ -273,7 +273,7 @@ th {
     padding-right: 1.25rem;
     border-bottom-width: 2px;
     border-color: #E5E7EB;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     line-height: 1rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -282,6 +282,13 @@ th {
     text-align: center;
     text-transform: uppercase;
     background-color: #F3F4F6;
+}
+
+.th-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
 }
 
 .tb-body {
@@ -359,6 +366,22 @@ button {
     padding-right: 0.34rem;
     border-radius: 100%;
     background: #dde7c7;
+}
+
+.undo-btn {
+    background: transparent;
+    border: none;
+    color: #06aed5;
+}
+
+.undo-btn:hover {
+    color: #06bee1;
+    padding-top: 0.30rem;
+    padding-bottom: 0.30rem;
+    padding-left: 0.34rem;
+    padding-right: 0.34rem;
+    border-radius: 100%;
+    background: #caf0f8;
 }
 
 .divisor {

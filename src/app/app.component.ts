@@ -64,6 +64,12 @@ export class AppComponent {
     this.save();
   }
 
+  markUndone(task: Task) {
+    task.done = false;
+    task.status = 'Iniciada';
+    this.save();
+  }
+
   save() {
     const data = JSON.stringify(this.tasks);
     localStorage.setItem('tasks', data);
@@ -79,7 +85,7 @@ export class AppComponent {
   getStatusColor(status: String): String {
     switch (status) {
       case 'Iniciada':
-        return '#ffa200'; 
+        return '#ffb700'; 
       case 'Finalizada':
         return '#16db65'; 
       default:
