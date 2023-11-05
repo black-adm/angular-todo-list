@@ -19,6 +19,7 @@ export class AppComponent {
   ];
   public title: String[] = [this.titlesList[0]];
   public form: FormGroup;
+  public status: String = '';
 
   constructor(private builder: FormBuilder) {
     this.form = this.builder.group({
@@ -39,8 +40,9 @@ export class AppComponent {
   add() {
     const title = this.form.controls['title'].value;
     const id = this.tasks.length + 1;
+    const status = this.status = 'Iniciada';
 
-    this.tasks.push(new Task(id, title, false))
+    this.tasks.push(new Task(id, title, false, status))
     this.save();
     this.clear();
   }
@@ -58,6 +60,7 @@ export class AppComponent {
 
   markDone(task: Task) {
     task.done = true;
+    task.status = 'Finalizada';
     this.save();
   }
 
@@ -71,5 +74,16 @@ export class AppComponent {
 
     if (items) return this.tasks = JSON.parse(items);
     return this.tasks = [];
+  }
+
+  getStatusColor(status: String): String {
+    switch (status) {
+      case 'Iniciada':
+        return '#ffa200'; 
+      case 'Finalizada':
+        return '#16db65'; 
+      default:
+        return '#fff'; 
+    }
   }
 }

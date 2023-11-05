@@ -322,7 +322,7 @@ th {
     font-weight: 600;
     font-size: 13px;
     line-height: 1.25;
-    color: #ff8c00;
+    color: #000;
 }
 
 .status {
@@ -332,8 +332,6 @@ th {
     bottom: 0;
     left: 0;
     border-radius: 9999px;
-    background-color: #fff8a5;
-    opacity: 0.5;
 }
 
 .table-buttons {
